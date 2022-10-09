@@ -4,16 +4,16 @@
  * @Author: Adxiong
  * @Date: 2022-10-07 23:14:56
  * @LastEditors: Adxiong
- * @LastEditTime: 2022-10-08 00:20:13
+ * @LastEditTime: 2022-10-09 23:11:07
  */
 import { BrowserRouter, useNavigate } from 'react-router-dom';
 import Routes from './routes/routes';
 import './app.css';
-import { useEffect } from 'react';
+import { useEffect, useState } from 'react';
 
 function App() {
   const Navigate = useNavigate();
-
+  const [theme, setTheme] = useState<string>('light');
   useEffect(() => {});
 
   const handleClickNav = (
@@ -22,8 +22,13 @@ function App() {
     Navigate(e.target.dataset.value);
   };
 
+  const switchTheme = () => {
+    setTheme((theme) => {
+      return theme === 'dark' ? 'light' : 'dark';
+    });
+  };
   return (
-    <div id="app">
+    <div id="app" className={theme == 'dark' ? 'dark' : 'light'}>
       <div id="header">
         <div id="site-logo" onClick={handleClickNav} data-value="/">
           logo
@@ -34,7 +39,7 @@ function App() {
             <li data-value="project">Project</li>
             <li data-value="talks">Talks</li>
             <li>github</li>
-            <li>黑暗</li>
+            <li onClick={switchTheme}>{theme === 'dark' ? '白天' : '黑暗'}</li>
           </ul>
         </div>
       </div>
