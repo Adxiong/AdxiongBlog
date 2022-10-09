@@ -4,16 +4,6 @@
   /* color: #b0bec1; */
 }
 
-:root {
-  --light_color: #000;
-  --light_background: #fff;
-  
-  --dark_color:rgba(247, 243, 243, 0.975);
-  --dark_background: #000;
-
-  --min_height: 100vh;
-
-}
 
 
 .dark {
@@ -59,7 +49,7 @@
   margin: 0 5px;
   opacity: .6;
   cursor: pointer;
-  font-weight: 500;
+  font-weight: var(w_500);
 }
 
 #site-nav > ul > li:hover{

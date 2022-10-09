@@ -1,0 +1,15 @@
+.introduction{
+  width: 40%;
+  margin-left: 50%;
+  transform: translateX(-35%);
+  margin-top: 180px;
+}
+.title{
+  font-size: 56px;
+  font-weight: var(w_500);
+  margin-bottom: 50px;
+}
+.content{
+  font-size: 22px;
+}
+

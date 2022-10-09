@@ -1,0 +1,11 @@
+:root{
+  --light_color: #000;
+  --light_background: #fff;
+  
+  --dark_color:rgba(247, 243, 243, 0.975);
+  --dark_background: #000;
+
+  --min_height: 100vh;
+
+  --w_500: 500;
+}
