@@ -4,15 +4,17 @@
  * @Author: Adxiong
  * @Date: 2022-10-10 23:43:11
  * @LastEditors: Adxiong
- * @LastEditTime: 2022-10-11 01:15:03
+ * @LastEditTime: 2022-10-12 23:42:02
  */
 
 import fs from "fs"
 import path  from "path"
 
-interface ArticleContent {
+export interface ArticleContent {
   Title: string
   Date: string
+  Author: string
+  Description:string
   Tag: string[]
   Link: string
 }
@@ -30,20 +32,33 @@ function ReadAll ( rootPath: string): (ArticleContent|undefined)[] {
           read(tempPath)
         }else {
           const content = fs.readFileSync(tempPath,'utf-8')
-          const re = new RegExp("<!--(\n.*)*-->")
-          if (re.test(content)) {
-            var val = content.match(re)?.input
-            val =  val?.replaceAll("\n","")
-            
-            console.log(val?.match("<!--(.*)-->")![1].match('\*\s*@(\w)*:\s*"(.)*"'))
+          const notesReg = new RegExp(/<!--([\r\n]|.)*?-->/)
+          var notesMap: {[key:string]:string} = {}
+
+          if (notesReg.test(content)) {
+            var val = notesReg.exec(content)
+            var group = new RegExp(/.*\*\s*@\s*.*:\s*.*\n/g)
+            val![0].match(group)?.forEach( item => {
+              let content = (/@[\w\d]*:/).exec(item)
+              if (content) {
+                let key:string = content[0].slice(1,-1)
+                let val:string = item.match(/:.*/)![0].slice(1)
+                notesMap[key] = val  
+              }              
+            })
           }
-          const articleData:ArticleContent ={
-            Title:"",
-            Date:"",
-            Tag:[""],
-            Link:"",
+          if (Object.values(notesMap).length > 0) {
+            const articleData:ArticleContent ={
+              Title: notesMap['Title']??"未知" ,
+              Author: notesMap['Author']??"未知",
+              Description:notesMap['Description']??"未知",
+              Date: notesMap['Date']??"未知",
+              Tag: notesMap['Tag'] ? notesMap['Tag'].split(",") : [],
+              Link:"",
+            }
+            result.push(articleData)
           }
-          result.push(articleData)
+          
         }
 
       })
@@ -52,8 +67,8 @@ function ReadAll ( rootPath: string): (ArticleContent|undefined)[] {
     return result
 }
 
-export default {
+const mfs = {
   ReadAll
 }
 
-console.log( ReadAll("/Users/adxiong/Documents/github/blog/doc") )
+export default mfs
