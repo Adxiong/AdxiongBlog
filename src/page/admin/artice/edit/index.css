@@ -1,0 +1,56 @@
+.editer {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  padding: 0 40px;
+  border: 1px solid var(--border-color-primary);
+}
+
+.editer-title {
+  width: 100%;
+  height: 50px;
+  line-height: 50px;
+  border-bottom: 1px solid var(--border-color-primary);
+  margin-top: 5px;
+}
+
+.editer-title-input{
+  width: 100%;
+  height: 99%;
+  border: none;
+  /* padding: 0 40px; */
+  outline: none;
+}
+.editer-content {
+  display: flex;
+  flex: 1;
+  overflow: hidden;
+  height: 100%;
+}
+
+.editer-content> div{
+  flex: 1;
+}
+
+.editarea {
+  height: 100%;
+
+}
+
+.editshow {
+  height: 100%;
+  overflow-y: scroll;
+  margin-left: 50px;
+}
+
+.editarea textarea {
+  resize: none;
+  width: 100%;
+  height: 100%;
+  overflow-y: scroll;
+  border: none;
+  outline: none;
+  border-right: 1px solid var(--border-color-primary) ;
+}

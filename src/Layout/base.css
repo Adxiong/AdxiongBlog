@@ -1,0 +1,8 @@
+.layout {
+  height: 100%;
+  display: flex;
+}
+.content {
+  padding: 50px;
+  flex: 1;
+}
