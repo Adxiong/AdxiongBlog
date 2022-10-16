@@ -4,7 +4,7 @@
  * @Author: Adxiong
  * @Date: 2022-10-07 23:44:41
  * @LastEditors: Adxiong
- * @LastEditTime: 2022-10-15 17:02:14
+ * @LastEditTime: 2022-10-15 23:52:47
  */
 import { Children } from 'react';
 import { RouteObject, useRoutes } from 'react-router-dom';
@@ -45,7 +45,7 @@ const routes: RouteObject[] = [
     element: <AdminLayout />,
     children: [
       {
-        path: 'blog/manage',
+        path: 'blog',
         element: <AdminBlogManage />,
       },
       {

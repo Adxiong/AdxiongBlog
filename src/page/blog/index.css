@@ -1,0 +1,32 @@
+.article {
+  width: 60%;
+  margin: auto;
+  height: 100%;
+}
+.article-list {
+  height: 100%;
+}
+
+.article-item {
+  box-shadow: var(--box-header-shadow);
+  transition: all .3s ease-in;
+  cursor: pointer;
+  padding: 20px 10px;
+  opacity: .4;
+}
+.article-item:hover {
+  opacity: 1;
+}
+
+.article-title {
+  font-size: 24px;
+  font-weight: 400;
+}
+.article-profile{
+  display: flex;
+  color: rgba(0,0, 0, .6);
+  margin-bottom: 5px;
+}
+.article-content{
+  font-size: 16px;
+}

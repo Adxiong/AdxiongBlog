@@ -4,12 +4,12 @@
  * @Author: Adxiong
  * @Date: 2022-10-15 15:25:28
  * @LastEditors: Adxiong
- * @LastEditTime: 2022-10-15 15:33:53
+ * @LastEditTime: 2022-10-16 10:56:58
  */
 import { Outlet } from 'react-router-dom';
 import { useEffect, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
-
+import './base.css';
 const DefaultLayout = () => {
   const Navigate = useNavigate();
   const [theme, setTheme] = useState<string>('light');
@@ -28,12 +28,12 @@ const DefaultLayout = () => {
   };
 
   return (
-    <div id="view" className={theme == 'dark' ? 'dark' : 'light'}>
-      <div id="header">
-        <div id="site-logo" onClick={handleClickNav} data-value="/">
+    <div className={theme == 'dark' ? 'dark layout' : 'light layout'}>
+      <div className="header">
+        <div className="site-logo" onClick={handleClickNav} data-value="/">
           logo
         </div>
-        <div id="site-nav">
+        <div className="site-nav">
           <ul onClick={handleClickNav}>
             <li data-value="blog">Blog</li>
             <li data-value="project">Project</li>
@@ -43,7 +43,9 @@ const DefaultLayout = () => {
           </ul>
         </div>
       </div>
-      <Outlet />
+      <div className="content">
+        <Outlet />
+      </div>
     </div>
   );
 };

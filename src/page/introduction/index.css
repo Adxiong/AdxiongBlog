@@ -1,15 +1,14 @@
 .introduction{
   width: 40%;
-  margin-left: 50%;
-  transform: translateX(-35%);
+  margin: auto;
   margin-top: 180px;
 }
-.title{
+.introduction-title{
   font-size: 56px;
   font-weight: var(w_500);
   margin-bottom: 50px;
 }
-.content{
+.introduction-content{
   font-size: 22px;
 }
 
