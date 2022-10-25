@@ -4,7 +4,7 @@
  * @Author: Adxiong
  * @Date: 2022-10-13 23:34:11
  * @LastEditors: Adxiong
- * @LastEditTime: 2022-10-15 16:37:03
+ * @LastEditTime: 2022-10-25 23:17:30
  */
 import { useNavigate } from 'react-router-dom';
 import './index.css';
@@ -33,7 +33,7 @@ const LeftMenu = (props: PropType) => {
     {
       Label: '博客管理',
       Icon: '',
-      Link: '/admin/blog/manage',
+      Link: '/admin/blog',
     },
   ];
 
