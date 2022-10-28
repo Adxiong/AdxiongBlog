@@ -4,7 +4,7 @@
  * @Author: Adxiong
  * @Date: 2022-10-13 22:51:37
  * @LastEditors: Adxiong
- * @LastEditTime: 2022-10-25 23:26:28
+ * @LastEditTime: 2022-10-29 00:37:38
  */
 import { Button, Space } from 'antd';
 import { useState } from 'react';
@@ -14,7 +14,7 @@ import http from '../../../../request/http';
 import './index.css';
 
 const Edit = () => {
-  const [content, setContent] = useState<string>();
+  const [content, setContent] = useState<string>('');
   const [title, setTitle] = useState<string>();
   const handleInputChange = (event: React.ChangeEvent<HTMLTextAreaElement>) => {
     setContent(event.target.value);
@@ -30,7 +30,11 @@ const Edit = () => {
     };
 
     http
-      .request(Request.Article.addArticle, Request.RequestPost, {}, data)
+      .request({
+        url: Request.Article.addArticle,
+        method: Request.RequestPost,
+        params: data,
+      })
       .then((res) => {
         console.log(res);
       })

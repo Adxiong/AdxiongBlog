@@ -4,10 +4,11 @@
  * @Author: Adxiong
  * @Date: 2022-10-07 23:51:23
  * @LastEditors: Adxiong
- * @LastEditTime: 2022-10-25 23:53:28
+ * @LastEditTime: 2022-10-29 00:37:11
  */
 import { Space, Tag } from 'antd';
 import React, { useEffect, useState } from 'react';
+import { useNavigate, Outlet } from 'react-router-dom';
 import Request from '../../request/api';
 import http from '../../request/http';
 import './index.css';
@@ -24,14 +25,13 @@ interface blogtype {
 
 function Blog() {
   const [data, setData] = useState<blogtype[]>();
-
+  const navigate = useNavigate();
   useEffect(() => {
     http
-      .request<blogtype[]>(
-        Request.Article.getArticleList,
-        Request.RequestGet,
-        {}
-      )
+      .request<blogtype[]>({
+        url: Request.Article.getArticleList,
+        method: Request.RequestGet,
+      })
       .then((res: blogtype[]) => {
         setData(res);
       })
@@ -40,12 +40,19 @@ function Blog() {
       });
   }, []);
 
+  const handleClickDetail = (aid: number) => {
+    navigate('../detail/' + aid);
+  };
   return (
     <div className="article">
       <div className="article-list">
         {data?.map((item: blogtype) => {
           return (
-            <div className="article-item">
+            <div
+              key={item.aid}
+              className="article-item"
+              onClick={() => handleClickDetail(item.aid)}
+            >
               <div className="article-title">{item.title}</div>
               <div className="article-profile">
                 <Space>
@@ -62,6 +69,7 @@ function Blog() {
           );
         })}
       </div>
+      <Outlet></Outlet>
     </div>
   );
 }
