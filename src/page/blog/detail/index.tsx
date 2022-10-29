@@ -3,14 +3,14 @@ import ReactMarkdown from 'react-markdown';
 import { useLocation, useParams, useSearchParams } from 'react-router-dom';
 import Request from '../../../request/api';
 import http, { RequestParams } from '../../../request/http';
-
+import './index.css';
 /*
  * @Description:
  * @version:
  * @Author: Adxiong
  * @Date: 2022-10-28 22:50:44
  * @LastEditors: Adxiong
- * @LastEditTime: 2022-10-29 00:45:25
+ * @LastEditTime: 2022-10-29 16:59:12
  */
 
 interface ArticleType {
@@ -46,7 +46,7 @@ const Detail = () => {
       <div className="article_body">
         <div className="article_title">{data?.title}</div>
         <div className="article_content">
-          <ReactMarkdown children={data?.content}></ReactMarkdown>
+          {data && <ReactMarkdown children={data.content}></ReactMarkdown>}
         </div>
       </div>
     </div>

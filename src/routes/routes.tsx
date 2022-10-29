@@ -4,7 +4,7 @@
  * @Author: Adxiong
  * @Date: 2022-10-07 23:44:41
  * @LastEditors: Adxiong
- * @LastEditTime: 2022-10-29 00:15:46
+ * @LastEditTime: 2022-10-29 17:18:10
  */
 import { Children } from 'react';
 import { Outlet, RouteObject, useRoutes } from 'react-router-dom';
@@ -29,7 +29,6 @@ const routes: RouteObject[] = [
       },
       {
         path: 'blog',
-        // element: <>{Children}</>,
         children: [
           {
             path: 'list',

@@ -1,0 +1,23 @@
+.article_page {
+  height: 100%;
+  overflow-y: visible;
+}
+
+.article_body {
+  width: 60%;
+  margin: auto;
+}
+
+.article_title{
+  height: 70px;
+  font-size: 32px;
+  text-align: center;
+}
+
+.article_content{
+  margin-top: 50px;
+}
+
+.dark .article_content h1{
+  color: var(--dark_color);
+}

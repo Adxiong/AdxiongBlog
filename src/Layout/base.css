@@ -1,10 +1,13 @@
 .layout {
   width: 100%;
   height: 100%;
+  display: flex;
+  flex-direction: column;
 }
 
 .admin {
   display: flex;
+  flex-direction: row;
 }
 
 .content {
@@ -23,14 +26,11 @@
   color: var(--light_color);
 }
 
-
-
 .header {
   height: 50px;
   padding-top: 20px;
   display: flex;
   align-items: center;
-  box-shadow:  var(--box-header-shadow);
   box-sizing: border-box;
 }
 
@@ -58,4 +58,17 @@
 
 .site-nav > ul > li:hover{
   opacity: 1;
+}
+
+.site-nav > ul > li > a {
+  display: inline-block;
+  transition: none;
+}
+
+.dark .site-nav > ul >li >a {
+  color: var(--dark_color);
+}
+
+.light .site-nav > ul >li >a {
+  color: var(--light_color);
 }
