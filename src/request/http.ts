@@ -4,7 +4,7 @@
  * @Author: Adxiong
  * @Date: 2022-10-25 22:47:12
  * @LastEditors: Adxiong
- * @LastEditTime: 2022-10-29 00:36:14
+ * @LastEditTime: 2022-11-13 21:38:47
  */
 import axios, { AxiosInstance, AxiosResponse, Canceler, CancelToken } from "axios"
 import {RequestType, RequestUrl} from "./api"
@@ -19,6 +19,7 @@ export interface RequestParams {
   method: RequestType
   headers?: Record<string,string> 
   params?: Record<string,any>
+  data?: Record<string,any>
 }
 
 class Http{
@@ -62,13 +63,14 @@ class Http{
     })
   }
 
-  request<T>({url,method,headers, params}:RequestParams): Promise<T>{
+  request<T>({url,method,headers, params,data}:RequestParams): Promise<T>{
     return new Promise((resolve, reject) => {
       this.server({
         url: "http://127.0.0.1:8080" + url,
         method,
         headers,
         params,
+        data,
         cancelToken: new CancelToken( c => {
           cancel = c
         } )

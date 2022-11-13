@@ -3,6 +3,7 @@ import ReactMarkdown from 'react-markdown';
 import { useLocation, useParams, useSearchParams } from 'react-router-dom';
 import Request from '../../../request/api';
 import http, { RequestParams } from '../../../request/http';
+import { ArticleType } from '../../../request/instant';
 import './index.css';
 /*
  * @Description:
@@ -10,16 +11,8 @@ import './index.css';
  * @Author: Adxiong
  * @Date: 2022-10-28 22:50:44
  * @LastEditors: Adxiong
- * @LastEditTime: 2022-10-29 16:59:12
+ * @LastEditTime: 2022-11-13 22:27:17
  */
-
-interface ArticleType {
-  id: number;
-  aid: number;
-  title: string;
-  content: string;
-  author_id: string;
-}
 
 const Detail = () => {
   const { aid } = useParams();
