@@ -4,13 +4,14 @@
  * @Author: Adxiong
  * @Date: 2022-10-07 23:44:41
  * @LastEditors: Adxiong
- * @LastEditTime: 2022-10-29 17:18:10
+ * @LastEditTime: 2023-03-02 01:05:44
  */
 import { Children } from 'react';
 import { Outlet, RouteObject, useRoutes } from 'react-router-dom';
 import Introduction from '../page/introduction';
 import Blog from '../page/blog';
 import Project from '../page/project';
+import Links from '../page/links';
 import Talks from '../page/talks';
 import Edit from '../page/admin/artice/edit';
 import AdminLayout from '../Layout/admin';
@@ -39,6 +40,10 @@ const routes: RouteObject[] = [
             element: <ArticleDetail />,
           },
         ],
+      },
+      {
+        path: 'links',
+        element: <Links />,
       },
       {
         path: 'project',

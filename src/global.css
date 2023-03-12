@@ -1,6 +1,6 @@
 :root{
   --light_color: #000;
-  --light_background: #fff;
+  --light_background: rgb(188, 212, 210);
   
   --dark_color:rgba(247, 243, 243, 0.975);
   --dark_background: #000;

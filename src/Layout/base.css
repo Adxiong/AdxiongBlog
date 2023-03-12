@@ -1,19 +1,20 @@
 .layout {
   width: 100%;
-  height: 100%;
+  height: 100vh;
+  overflow-y: scroll;
   display: flex;
   flex-direction: column;
 }
-
+canvas {
+  position: absolute;
+}
 .admin {
   display: flex;
   flex-direction: row;
 }
 
 .content {
-  padding: 50px;
-  flex: 1;
-  position: relative;
+  width: 100%;
 }
 
 .dark {
@@ -28,47 +29,43 @@
 
 .header {
   height: 50px;
-  padding-top: 20px;
-  display: flex;
-  align-items: center;
-  box-sizing: border-box;
+  user-select: none;
 }
 
 .site-logo{
-  flex: 1;
-  padding-left: 100px;
+  float: left;
+  height: 50px;
+  line-height: 50px;
+  margin-left: 100px;
 }
 
 .site-nav {
-  flex:1; 
+  float: right;
+  height: 50px;
+  line-height: 50px;
+  display: flex;
+  align-items: center;
   padding-right: 100px;
 }
 
-.site-nav > ul {
-  float: right;
-}
-
-.site-nav > ul > li{
-  display: inline-block;
-  margin: 0 5px;
-  opacity: .6;
+.site-nav > div {
+  height: 100%;
   cursor: pointer;
+  line-height: 50px;
+  padding: 0 15px;
+  z-index: 1;
   font-weight: var(w_500);
+  opacity: .6;
 }
 
-.site-nav > ul > li:hover{
+.site-nav > div:hover{
   opacity: 1;
 }
 
-.site-nav > ul > li > a {
-  display: inline-block;
-  transition: none;
-}
-
-.dark .site-nav > ul >li >a {
+.dark .site-nav > div {
   color: var(--dark_color);
 }
 
-.light .site-nav > ul >li >a {
+.light .site-nav > div {
   color: var(--light_color);
 }

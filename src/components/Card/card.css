@@ -1,0 +1,47 @@
+.card {
+  padding: 10px;
+  width: 320px;
+  height: 200px;
+  display: flex;
+  align-content: center;
+  background-color: #fff;
+  border-radius: 15px;
+  margin: 10px;
+  border: 1px solid #fff;
+}
+.card:hover{
+  border: 1px solid #ede0e0;
+}
+
+.card-pic {
+  width: 100px;
+  display: flex;
+  align-content: center;
+  justify-content: center;
+}
+
+.card-pic img {
+  width: 80%;
+  height: 80%;
+  margin: auto;
+}
+
+.card-content {
+  flex: 1;
+}
+
+.card-title h4{
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.card-snapshot {
+  color: #000;
+  font-size: 12px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-line-clamp: 7;
+  -webkit-box-orient: vertical;
+}

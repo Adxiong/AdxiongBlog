@@ -1,7 +1,6 @@
 .article {
   width: 60%;
   margin: auto;
-  height: 100%;
 }
 .article-list {
   height: 100%;
@@ -9,13 +8,13 @@
 
 .article-item {
   box-shadow: var(--box-header-shadow);
-  transition: all .3s ease-in;
+  transition: all .3s;
   cursor: pointer;
   padding: 20px 10px;
-  opacity: .4;
 }
 .article-item:hover {
   opacity: 1;
+  padding: 10px 0;
 }
 
 .article-title {
