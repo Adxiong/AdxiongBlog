@@ -4,7 +4,7 @@
  * @Author: Adxiong
  * @Date: 2022-10-15 15:25:28
  * @LastEditors: Adxiong
- * @LastEditTime: 2023-03-02 01:01:45
+ * @LastEditTime: 2023-03-18 00:24:48
  */
 import { Outlet } from 'react-router-dom';
 import { useEffect, useRef, useState } from 'react';
@@ -194,6 +194,7 @@ const DefaultLayout = () => {
           <div onClick={() => handleClickNav('links')}>Links</div>
           <div onClick={() => handleClickNav('project')}>Project</div>
           <div onClick={() => handleClickNav('talks')}>Talks</div>
+          <div onClick={() => handleClickNav('admin/blog')}>admin</div>
           <div>
             <a href="https://github.com/Adxiong">github</a>
           </div>

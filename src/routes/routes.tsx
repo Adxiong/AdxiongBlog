@@ -4,7 +4,7 @@
  * @Author: Adxiong
  * @Date: 2022-10-07 23:44:41
  * @LastEditors: Adxiong
- * @LastEditTime: 2023-03-02 01:05:44
+ * @LastEditTime: 2023-03-18 00:36:30
  */
 import { Children } from 'react';
 import { Outlet, RouteObject, useRoutes } from 'react-router-dom';
@@ -18,6 +18,7 @@ import AdminLayout from '../Layout/admin';
 import DefaultLayout from '../Layout/default';
 import AdminBlogManage from '../page/admin/blogManage';
 import ArticleDetail from '../page/blog/detail';
+import Link from '../page/admin/link';
 
 const routes: RouteObject[] = [
   {
@@ -64,8 +65,12 @@ const routes: RouteObject[] = [
         element: <AdminBlogManage />,
       },
       {
-        path: 'blog/edit',
+        path: 'editblog',
         element: <Edit />,
+      },
+      {
+        path: 'link',
+        element: <Link />,
       },
     ],
   },

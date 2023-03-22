@@ -11,13 +11,13 @@ import './index.css';
  * @Author: Adxiong
  * @Date: 2022-10-28 22:50:44
  * @LastEditors: Adxiong
- * @LastEditTime: 2022-11-13 22:27:17
+ * @LastEditTime: 2023-03-22 01:25:46
  */
 
 const Detail = () => {
   const { aid } = useParams();
-
   const [data, setData] = useState<ArticleType>();
+
   useEffect(() => {
     http
       .request<ArticleType>({
@@ -38,6 +38,8 @@ const Detail = () => {
     <div className="article_page">
       <div className="article_body">
         <div className="article_title">{data?.title}</div>
+        <div onClick={() => speech()}>播放</div>
+
         <div className="article_content">
           {data && <ReactMarkdown children={data.content}></ReactMarkdown>}
         </div>

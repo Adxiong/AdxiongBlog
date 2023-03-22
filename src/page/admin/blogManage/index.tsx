@@ -4,7 +4,7 @@
  * @Author: Adxiong
  * @Date: 2022-10-15 16:18:51
  * @LastEditors: Adxiong
- * @LastEditTime: 2022-11-13 21:47:35
+ * @LastEditTime: 2023-03-18 00:37:23
  */
 
 import { Button, Form, Input, Space, Table } from 'antd';
@@ -143,9 +143,9 @@ const AdminBlogManage = () => {
    */
   const handleClickWriteArticle = (aid?: number) => {
     if (aid) {
-      Navigate(`/admin/blog/edit?aid=${aid}`);
+      Navigate(`/admin/editblog?aid=${aid}`);
     } else {
-      Navigate('/admin/blog/edit');
+      Navigate('/admin/editblog');
     }
   };
 

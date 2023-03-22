@@ -69,3 +69,24 @@ canvas {
 .light .site-nav > div {
   color: var(--light_color);
 }
+
+.admin .menu {
+  padding: 5px 10px;
+  border-right: 1px solid var(--border-color-primary);
+  height: 100%;
+  width: 150px;
+}
+
+.admin .menu-item {
+  color:var(--text-color-primary);
+  display: flex;
+  align-items: center;
+  padding-left: 2rem;
+  cursor: pointer;
+  line-height: 40px;
+}
+
+.admin .menu-item:hover{
+  background-color: var(--bg-color-primary);
+  border-radius: 8px;
+}
