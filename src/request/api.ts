@@ -4,7 +4,7 @@
  * @Author: Adxiong
  * @Date: 2022-10-25 22:52:44
  * @LastEditors: Adxiong
- * @LastEditTime: 2022-10-29 00:25:40
+ * @LastEditTime: 2023-04-09 23:27:54
  */
 export type RequestType = string
 export type RequestUrl = string
@@ -29,6 +29,17 @@ interface ArticleType {
   getArticleDetail: RequestUrl
 }
 
+interface LinkType{
+  addCategory: RequestUrl
+  updateCategory: RequestUrl
+  delCategory: RequestUrl
+  getCategoryList: RequestUrl
+  addLink:RequestUrl
+  updateLink:RequestUrl
+  delLink:RequestUrl
+  getLinkList: RequestUrl
+}
+
 const User: UserType = {
   registerUser: "/user/register",
   delUser: "/user/del",
@@ -44,11 +55,23 @@ const Article: ArticleType = {
   getArticleDetail: "/article/detail",
 }
 
+const Link: LinkType = {
+  addCategory: "/category/add",
+  updateCategory: "/category/update",
+  delCategory: "/category/del",
+  getCategoryList: "/category/list",
+  addLink: "/link/add",
+  updateLink: "/link/update",
+  delLink: "/link/del",
+  getLinkList: "/link/list",
+}
+
 const Request  = {
   RequestGet,
   RequestPost,
   User,
-  Article
+  Article,
+  Link
 }
 
 
